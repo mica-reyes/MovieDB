@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="8dp"
+    tools:context=".views.DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+      <!--  <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+-->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.3"
+            android:paddingVertical="8dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/iv_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="titulo" />
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/teal_700"
+            android:paddingVertical="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_genres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="genres" />
+
+        <TextView
+            android:id="@+id/tv_original_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_genres"
+            tools:text="language" />
+
+        <TextView
+            android:id="@+id/tv_popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_original_language"
+            tools:text="popularity" />
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_popularity"
+            tools:text="date" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.04"
+            android:paddingVertical="8dp"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_poster"
+            tools:text="@tools:sample/lorem/random[10]" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
