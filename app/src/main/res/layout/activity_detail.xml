@@ -30,8 +30,7 @@
             android:fontFamily="sans-serif"
             android:letterSpacing="0.3"
             android:paddingVertical="8dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toTopOf="@id/iv_poster"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,17 +43,17 @@
           android:id="@+id/iv_poster"
           android:layout_width="200dp"
           android:layout_height="200dp"
-          android:background="@color/teal_700"
           android:paddingVertical="4dp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tv_title" />
+          android:importantForAccessibility="no"
+          app:layout_constraintTop_toBottomOf="@id/tv_title"/>
 
         <TextView
             android:id="@+id/tv_genres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:textSize="14dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/iv_poster"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             tools:text="genres" />
@@ -64,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:textSize="14dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/iv_poster"
             app:layout_constraintTop_toBottomOf="@id/tv_genres"
             tools:text="language" />
@@ -74,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:textSize="14dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/iv_poster"
             app:layout_constraintTop_toBottomOf="@id/tv_original_language"
             tools:text="popularity" />
@@ -84,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:textSize="14dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/iv_poster"
             app:layout_constraintTop_toBottomOf="@id/tv_popularity"
             tools:text="date" />
@@ -95,10 +94,10 @@
             android:layout_height="wrap_content"
             android:letterSpacing="0.04"
             android:paddingVertical="8dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_poster"
-            tools:text="@tools:sample/lorem/random[10]" />
+            tools:text="@tools:sample/lorem/random[1]" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.themoviedb.databinding.ActivityMainBinding
@@ -17,10 +18,11 @@ class MainActivity : AppCompatActivity() {
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.recyclerMovie.layoutManager = LinearLayoutManager(this)
+        binding.recyclerMovie.layoutManager = GridLayoutManager(this, 3)
         viewModel.movieList.observe(this) { movie ->
             binding.recyclerMovie.adapter = movie?.let {
                 MovieAdapter(it)
