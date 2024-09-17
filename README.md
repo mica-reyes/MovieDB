@@ -5,7 +5,7 @@
 ### Home screen
 <img src=https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d width=30% height=30%> 
 #
-<img src=[https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d](https://github.com/user-attachments/assets/9c46aa43-300d-436e-a6e6-0ebea14fcc5d) width=30% height=30%> 
+<img src=[https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d] width=30% height=30%> 
 
 ### Detail screen
 <img src= https://github.com/user-attachments/assets/ac90942e-ea08-45a3-9060-1d52dc30890b width=30% height=30%> 
