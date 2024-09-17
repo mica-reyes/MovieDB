@@ -12,6 +12,7 @@
 
 ### Detail screen
 <img src= https://github.com/user-attachments/assets/771a2a8c-fd93-40db-89e3-1a0bce57fe96 width=30% height=30%> 
+#
 
 <img src=https://github.com/user-attachments/assets/ada11264-f1be-47e0-b3dc-75d271bd2a4d width=30% height=30%> 
 
