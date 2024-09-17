@@ -3,7 +3,7 @@
 [descargar apk](https://github.com/mica-reyes/MovieDB/blob/main/app-debug.apk)
 
 ### Home screen
-<img src= https://github.com/user-attachments/assets/30cc4f09-e7d8-4c7c-b46d-0a27ebf787ea width=30% height=30%>
+<img src= https://github.com/user-attachments/assets/30cc4f09-e7d8-4c7c-b46d-0a27ebf787ea width=30% height=30% margin = 50>
 
 
 <img src=https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d width=30% height=30%> 
