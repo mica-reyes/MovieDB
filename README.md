@@ -8,7 +8,7 @@
 ✔ RecyclerView
 
 ### Home screen
-![WhatsApp Image 2024-09-16 at 22 22 00 (2)](https://github.com/user-attachments/assets/7938dcd6-6d1e-4ea0-b9bb-b9beb7df3fb7)
+<img src=https://github.com/user-attachments/assets/7938dcd6-6d1e-4ea0-b9bb-b9beb7df3fb7 width=30% height=30%> 
 
 ### Detail screen
 ![WhatsApp Image 2024-09-16 at 22 22 00](https://github.com/user-attachments/assets/771a2a8c-fd93-40db-89e3-1a0bce57fe96)
