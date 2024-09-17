@@ -2,11 +2,6 @@
 
 [descargar apk](https://github.com/mica-reyes/MovieDB/blob/main/app-release.apk)
 
-✔ Kotlin
-✔ MVVM
-✔ Consumo de API REST con Retrofit
-✔ RecyclerView
-
 ### Home screen
 <img src=https://github.com/user-attachments/assets/7938dcd6-6d1e-4ea0-b9bb-b9beb7df3fb7 width=30% height=30%> 
 
@@ -16,5 +11,6 @@
 
 <img src=https://github.com/user-attachments/assets/ada11264-f1be-47e0-b3dc-75d271bd2a4d width=30% height=30%> 
 
+### 
 https://github.com/user-attachments/assets/bacbd02d-8c85-4c03-853b-74859b653272
 
