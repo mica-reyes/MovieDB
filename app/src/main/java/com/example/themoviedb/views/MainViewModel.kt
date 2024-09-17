@@ -15,10 +15,12 @@ class MainViewModel(val repository: MovieRepository) : ViewModel() {
     val isReady= MutableLiveData<Boolean>(false)
 
     fun getMovieList() {
+        loading.value = true
         viewModelScope.launch {
             val response = repository.getMovieList()
             movieList.value = response
             isReady.value= true
+            loading.value = false
         }
     }
 

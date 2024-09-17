@@ -31,5 +31,4 @@ class MovieAdapter(private val movieList: MovieList) : RecyclerView.Adapter<Movi
     override fun getItemCount(): Int {
         return movieList.results.size
     }
-
 }
