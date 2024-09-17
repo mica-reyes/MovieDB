@@ -4,7 +4,9 @@
 
 ### Home screen
 <img src=https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d width=30% height=30%> 
+
 #
+
 <img src=[https://github.com/user-attachments/assets/c79109d5-97d9-44f0-a571-9d886eab9e2d] width=30% height=30%> 
 
 ### Detail screen
