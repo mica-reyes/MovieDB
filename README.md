@@ -1,4 +1,4 @@
-## Movie DB
+## Movie DB (Views)
 
 [descargar apk](https://github.com/mica-reyes/MovieDB/blob/main/app-release.apk)
 
