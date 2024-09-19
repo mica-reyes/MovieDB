@@ -1,5 +1,5 @@
 ## Movie DB (Views)
-Proyecto realizado en Android Studio utilizando Kotlin, Android Views, arquitectura MVVM, Retrofit para realizar las llamadas a una API remota, patron repository para aislar la fuente de datos del resto de la app y proporcionar una API limpia para el acceso de datos al resto de la app, RecyclerView para mostrar los datos de la API en una listas dinámicas.
+Proyecto realizado en Android Studio utilizando Kotlin, Android Views, arquitectura MVVM, Retrofit para realizar las llamadas a una API remota, patron repository para aislar la fuente de datos del resto de la app, RecyclerView para mostrar los datos de la API en una listas dinámicas.
 
 [descargar apk](https://github.com/mica-reyes/MovieDB/blob/main/app-debug.apk)
 
