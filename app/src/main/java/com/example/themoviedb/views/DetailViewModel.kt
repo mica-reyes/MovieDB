@@ -5,9 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.themoviedb.data.Detail
 import com.example.themoviedb.data.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DetailViewModel(val repository: MovieRepository): ViewModel() {
+@HiltViewModel
+class DetailViewModel @Inject constructor(val repository: MovieRepository): ViewModel() {
 
     val detail = MutableLiveData<Detail?>()
     val loading = MutableLiveData<Boolean>(false)

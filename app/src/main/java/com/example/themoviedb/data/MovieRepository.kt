@@ -1,19 +1,21 @@
 package com.example.themoviedb.data
 
-class MovieRepository(private val remoteDataSource: MovieRemoteDataSource) {
-    suspend fun getMovieList(): MovieList?{
-       return remoteDataSource.getMovieList()
+import com.example.themoviedb.data.remote.MovieService
+
+class MovieRepository(private val movieService: MovieService) {
+    suspend fun getMovieList(): MovieList{
+       return movieService.getMovieList()
     }
 
-    suspend fun getUpcomingList() : MovieList?{
-        return remoteDataSource.getUpcomingList()
+    suspend fun getUpcomingList() : MovieList{
+        return movieService.getUpcomingList()
     }
 
-    suspend fun getTopRatedList(): MovieList?{
-        return remoteDataSource.getTopRatedList()
+    suspend fun getTopRatedList(): MovieList{
+        return movieService.getTopRatedList()
     }
 
-    suspend fun getDetail(id: Int): Detail?{
-        return remoteDataSource.getDetails(id)
+    suspend fun getDetail(id: Int): Detail{
+        return movieService.getDetails(id)
     }
 }

@@ -14,13 +14,12 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.themoviedb.BuildConfig
 import com.example.themoviedb.databinding.ActivityDetailBinding
 import com.example.themoviedb.views.recyclerview.GenreAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import eightbitlab.com.blurview.RenderScriptBlur
-
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private val viewModel: DetailViewModel by viewModels(
-        factoryProducer = { DetailViewModelFactory() }
-    )
+    private val viewModel: DetailViewModel by viewModels()
 
     companion object {
         const val ID = "id"
