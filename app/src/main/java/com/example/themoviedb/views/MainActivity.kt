@@ -68,4 +68,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun myList(){
+
+    }
 }

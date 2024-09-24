@@ -64,6 +64,25 @@
                 android:paddingEnd="8dp" />
 
             <TextView
+                android:id="@+id/tv_myList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:text="My lista" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_myList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <TextView
                 android:id="@+id/tv_movies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

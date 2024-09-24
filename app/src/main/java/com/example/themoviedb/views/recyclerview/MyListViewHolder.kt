@@ -6,7 +6,7 @@ import com.example.themoviedb.BuildConfig
 import com.example.themoviedb.data.Movie
 import com.example.themoviedb.databinding.ItemDetailBinding
 
-class UpcomingViewHolder(val binding: ItemDetailBinding) : RecyclerView.ViewHolder(binding.root) {
+class MyListViewHolder(val binding: ItemDetailBinding) : RecyclerView.ViewHolder(binding.root) {
     fun render (movie: Movie){
         Glide.with(binding.ivDetail.context).load("${BuildConfig.IMAGE_URL}${movie.image}")
             .into(binding.ivDetail)

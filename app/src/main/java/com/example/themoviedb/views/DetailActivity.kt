@@ -71,6 +71,7 @@ class DetailActivity : AppCompatActivity() {
             binding.progressBar.visibility = if (loading) View.VISIBLE else View.INVISIBLE
             binding.blurView.visibility= if (loading) View.INVISIBLE else View.VISIBLE
             binding.backBtn.visibility= if (loading) View.INVISIBLE else View.VISIBLE
+            binding.favBtn.visibility= if (loading) View.INVISIBLE else View.VISIBLE
         }
 
     }
