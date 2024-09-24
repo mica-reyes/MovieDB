@@ -12,26 +12,35 @@ class MainViewModel(val repository: MovieRepository) : ViewModel() {
 
     val loading = MutableLiveData<Boolean>(false)
     val movieList = MutableLiveData<MovieList?>()
-    val isReady= MutableLiveData<Boolean>(false)
+    val upcomingList= MutableLiveData<MovieList?>()
+    val topRatedList= MutableLiveData<MovieList?>()
+
+    init {
+        getMovieList()
+        getUpcomingList()
+        getTopRatedList()
+    }
 
     fun getMovieList() {
         loading.value = true
         viewModelScope.launch {
             val response = repository.getMovieList()
             movieList.value = response
-            isReady.value= true
             loading.value = false
         }
     }
 
-    val detail = MutableLiveData<Detail?>()
-    fun getDetail(id: Int) {
-        loading.value = true
+    fun getUpcomingList() {
         viewModelScope.launch {
-            val response = repository.getDetail(id)
-            detail.value = response
-            loading.value = false
+            val response = repository.getUpcomingList()
+            upcomingList.value= response
         }
     }
 
+    fun getTopRatedList() {
+        viewModelScope.launch {
+            val response = repository.getTopRatedList()
+            topRatedList.value= response
+        }
+    }
 }

@@ -18,8 +18,8 @@ import eightbitlab.com.blurview.RenderScriptBlur
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private val viewModel: MainViewModel by viewModels(
-        factoryProducer = { MainViewModelFactory() }
+    private val viewModel: DetailViewModel by viewModels(
+        factoryProducer = { DetailViewModelFactory() }
     )
 
     companion object {
@@ -43,11 +43,17 @@ class DetailActivity : AppCompatActivity() {
             }
             binding.tvReleaseDate.text = detail?.release_date.toString().substring(0,4)
             binding.tvDescription.text = detail?.description.toString()
+
             val requestOptions= RequestOptions().transform(CenterCrop(), GranularRoundedCorners(0f, 0f, 50f, 50f))
             Glide.with(binding.ivPoster.context)
                 .load("${BuildConfig.IMAGE_URL}${detail?.poster}")
                 .apply(requestOptions)
                 .into(binding.ivPoster)
+
+            binding.backBtn.setOnClickListener {
+                finish()
+            }
+
             val radius= 10f
             val decorView= window.decorView
             val rootView= decorView.findViewById<ViewGroup>(android.R.id.content)
@@ -64,6 +70,7 @@ class DetailActivity : AppCompatActivity() {
         viewModel.loading.observe(this) { loading ->
             binding.progressBar.visibility = if (loading) View.VISIBLE else View.INVISIBLE
             binding.blurView.visibility= if (loading) View.INVISIBLE else View.VISIBLE
+            binding.backBtn.visibility= if (loading) View.INVISIBLE else View.VISIBLE
         }
 
     }
