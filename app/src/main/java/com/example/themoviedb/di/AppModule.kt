@@ -1,8 +1,12 @@
 package com.example.themoviedb.di
 
+import android.app.Application
+import androidx.room.Room
 import com.example.themoviedb.BuildConfig
 import com.example.themoviedb.data.remote.ApiKeyInterceptor
 import com.example.themoviedb.data.MovieRepository
+import com.example.themoviedb.data.local.MovieDao
+import com.example.themoviedb.data.local.MovieDataBase
 import com.example.themoviedb.data.remote.MovieService
 import dagger.Module
 import dagger.Provides
@@ -34,8 +38,23 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(apiService: MovieService): MovieRepository{
-        return MovieRepository(apiService)
+    fun provideRepository(apiService: MovieService, dao: MovieDao): MovieRepository{
+        return MovieRepository(apiService, dao)
     }
 
+    @Singleton
+    @Provides
+    fun provideDatabase(application:Application): MovieDataBase{
+        return Room.databaseBuilder(
+            application,
+            MovieDataBase::class.java,
+            name = "movie_database"
+        ).fallbackToDestructiveMigration().build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideDao(movieDataBase: MovieDataBase): MovieDao{
+        return movieDataBase.movieDao()
+    }
 }

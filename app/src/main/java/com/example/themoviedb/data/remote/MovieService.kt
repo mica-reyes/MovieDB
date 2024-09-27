@@ -1,6 +1,6 @@
 package com.example.themoviedb.data.remote
 
-import com.example.themoviedb.data.Detail
+import com.example.themoviedb.data.Movie
 import com.example.themoviedb.data.MovieList
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -16,5 +16,5 @@ interface MovieService {
     suspend fun getTopRatedList(): MovieList
 
     @GET("movie/{id}")
-    suspend fun getDetails(@Path("id") id: Int): Detail
+    suspend fun getDetail(@Path("id") id: Int): Movie
 }

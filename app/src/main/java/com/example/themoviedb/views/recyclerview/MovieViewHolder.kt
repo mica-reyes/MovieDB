@@ -8,7 +8,7 @@ import com.example.themoviedb.databinding.ItemMovieBinding
 
 class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
     fun render(movie: Movie) {
-        Glide.with(binding.ivMovieList.context).load("${BuildConfig.IMAGE_URL}${movie.image}")
-            .into(binding.ivMovieList)
+        Glide.with(binding.ivMovieItem.context).load("${BuildConfig.IMAGE_URL}${movie.image}")
+            .into(binding.ivMovieItem)
     }
 }

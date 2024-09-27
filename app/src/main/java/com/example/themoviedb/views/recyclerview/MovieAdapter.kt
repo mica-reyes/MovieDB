@@ -11,7 +11,6 @@ import com.example.themoviedb.views.DetailActivity
 class MovieAdapter(private val movieList: MovieList) : RecyclerView.Adapter<MovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        //val view = layoutInflater.inflate(R.layout.item_movie, parent, false)
         val binding= ItemMovieBinding.inflate(layoutInflater, parent, false)
         return MovieViewHolder(binding)
     }

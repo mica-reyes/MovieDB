@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.themoviedb.data.MovieList
-import com.example.themoviedb.databinding.ItemDetailBinding
+import com.example.themoviedb.databinding.ItemHorizontalMovieBinding
 import com.example.themoviedb.views.DetailActivity
 
 class UpcomingAdapter(private val movieList: MovieList): RecyclerView.Adapter<UpcomingViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewTipe: Int): UpcomingViewHolder {
         val layoutInflater= LayoutInflater.from(parent.context)
-        val binding= ItemDetailBinding.inflate(layoutInflater, parent, false)
+        val binding= ItemHorizontalMovieBinding.inflate(layoutInflater, parent, false)
         return UpcomingViewHolder(binding)
     }
 

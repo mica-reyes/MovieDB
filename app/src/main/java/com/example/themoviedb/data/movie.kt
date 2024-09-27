@@ -1,26 +1,20 @@
 package com.example.themoviedb.data
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class Movie(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String,
-    @SerializedName("poster_path") val image: String
-)
-
-data class Detail(
-    @SerializedName("title") val title: String,
+    @SerializedName("poster_path") val image: String,
     @SerializedName("genres") val genres: List<Genres>,
-    @SerializedName("original_language") val original_language: String,
-    @SerializedName("popularity") val popularity: Float,
-    @SerializedName("release_date") val release_date: String,
+    @SerializedName("release_date") val releaseDate: String,
     @SerializedName("overview") val description: String,
-    @SerializedName("poster_path") val poster: String
-)
+    var fav: Boolean= false,
+    )
 
 data class Genres(
-    val name: String
+    val name: String,
+    val id:Int
 )
 
 data class MovieList(@SerializedName("results") val results: List<Movie>)
