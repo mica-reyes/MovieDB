@@ -14,7 +14,7 @@ data class Movie(
 
 data class Genres(
     val name: String,
-    val id:Int
+   // val id:Int
 )
 
 data class MovieList(@SerializedName("results") val results: List<Movie>)

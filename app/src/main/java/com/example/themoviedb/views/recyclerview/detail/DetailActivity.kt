@@ -1,4 +1,4 @@
-package com.example.themoviedb.views
+package com.example.themoviedb.views.recyclerview.detail
 
 import android.os.Bundle
 import android.view.View
@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.themoviedb.BuildConfig
+import com.example.themoviedb.R
 import com.example.themoviedb.databinding.ActivityDetailBinding
-import com.example.themoviedb.views.recyclerview.GenreAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import eightbitlab.com.blurview.RenderScriptBlur
 
@@ -35,13 +36,13 @@ class DetailActivity : AppCompatActivity() {
 
         viewModel.detail.observe(this) { detail ->
             binding.tvTitle.text = detail?.title
+
             binding.recyclerGenre.layoutManager =
                 LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            viewModel.detail.observe(this) { genre ->
-                binding.recyclerGenre.adapter = genre?.let {
-                    GenreAdapter(it.genres)
-                }
+            binding.recyclerGenre.adapter = detail?.genres?.let {
+                GenreAdapter(it)
             }
+
             binding.tvReleaseDate.text = detail?.releaseDate.toString().substring(0, 4)
             binding.tvDescription.text = detail?.description.toString()
 
@@ -56,19 +57,13 @@ class DetailActivity : AppCompatActivity() {
                 finish()
             }
 
-            binding.favBtn.setColorFilter(
+            binding.favBtn.apply {
                 if (detail!!.fav) {
-                    resources.getColor(android.R.color.holo_red_dark)
+                   // isChecked = true-> no funciona xq el setOnCheckedChangeListener se ejecuta cada vez que entro al detail
+                    buttonTintList = ContextCompat.getColorStateList(context, R.color.fav)
                 } else {
-                    resources.getColor(android.R.color.darker_gray)
-                }
-            )
-
-            viewModel.fav.observe(this) { fav ->
-                if (fav) {
-                    binding.favBtn.setColorFilter(resources.getColor(android.R.color.holo_red_dark))
-                } else {
-                    binding.favBtn.setColorFilter(resources.getColor(android.R.color.darker_gray))
+                    //isChecked = false
+                    buttonTintList = ContextCompat.getColorStateList(this.context, R.color.white)
                 }
             }
 
@@ -82,12 +77,20 @@ class DetailActivity : AppCompatActivity() {
             binding.blurView.outlineProvider = ViewOutlineProvider.BACKGROUND
             binding.blurView.clipToOutline = true
         }
+
         if (id != null) {
             viewModel.getDetail(id)
         }
 
-        binding.favBtn.setOnClickListener {
-            viewModel.detail?.value?.id?.let { movieId -> viewModel.movieFavEvent(movieId) }
+        binding.favBtn.setOnCheckedChangeListener { checkBox, isChecked ->
+            //if (isChecked) {
+            if(checkBox.buttonTintList == ContextCompat.getColorStateList(this, R.color.white)){
+                viewModel.favIsChecked()
+                checkBox.buttonTintList = ContextCompat.getColorStateList(this, R.color.fav)
+            } else {
+                viewModel.detail?.value?.id?.let { movieId -> viewModel.favUnchecked(movieId) }
+                checkBox.buttonTintList = ContextCompat.getColorStateList(this, R.color.white)
+            }
         }
 
         viewModel.loading.observe(this) { loading ->

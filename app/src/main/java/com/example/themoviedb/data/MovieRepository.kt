@@ -39,17 +39,14 @@ class MovieRepository(private val movieService: MovieService, private val movieD
                 GenreEntity(
                     movieId = movie.id,
                     name = it.name,
-                    genreId = it.id
+                    genreId = 0
                 )
             )
         }
     }
 
-    fun getDetailDb(movieId: Int): Flow<MovieWithGenres> {
-        return movieDao.getDetailDB(movieId)
-    }
-
-    suspend fun deleteMovieFav(movieId: Int){
+    suspend fun deleteMovieFav(movieId: Int) {
         movieDao.deleteMovieFav(movieId)
+        movieDao.deleteGenre(movieId)
     }
 }

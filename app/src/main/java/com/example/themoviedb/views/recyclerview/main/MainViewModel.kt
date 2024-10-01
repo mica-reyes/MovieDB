@@ -1,4 +1,4 @@
-package com.example.themoviedb.views
+package com.example.themoviedb.views.recyclerview.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

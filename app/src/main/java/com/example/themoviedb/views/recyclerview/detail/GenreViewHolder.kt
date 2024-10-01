@@ -1,4 +1,4 @@
-package com.example.themoviedb.views.recyclerview
+package com.example.themoviedb.views.recyclerview.detail
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.themoviedb.data.Genres

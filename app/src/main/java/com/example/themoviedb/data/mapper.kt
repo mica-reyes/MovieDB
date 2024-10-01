@@ -8,9 +8,8 @@ fun Movie.toEntity(): MovieEntity {
         id = this.id,
         image = this.image,
         title = this.title,
-        fav = this.fav,
         releaseDate = this.releaseDate,
-        description = this.description
+        description = this.description,
     )
 }
 
@@ -25,7 +24,7 @@ fun MovieWithGenres.toDomain(): Movie {
         genres = this.genresList.map {
             Genres(
                 name = it.name,
-                id = it.genreId
+              //  id = it.genreId
             )
         }
     )

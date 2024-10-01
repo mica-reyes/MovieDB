@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.themoviedb.data.MovieList
 import com.example.themoviedb.databinding.ItemMovieBinding
-import com.example.themoviedb.views.DetailActivity
+import com.example.themoviedb.views.recyclerview.detail.DetailActivity
 
 class MovieAdapter(private val movieList: MovieList) : RecyclerView.Adapter<MovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {

@@ -24,4 +24,7 @@ interface MovieDao {
 
     @Query("DELETE from movie_table WHERE id= :movieId")
     suspend fun deleteMovieFav(movieId: Int)
+
+    @Query("DELETE from genreentity WHERE movieId= :movieId")
+    suspend fun deleteGenre(movieId: Int)
 }

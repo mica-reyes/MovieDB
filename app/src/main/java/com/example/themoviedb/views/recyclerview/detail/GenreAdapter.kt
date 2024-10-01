@@ -1,4 +1,4 @@
-package com.example.themoviedb.views.recyclerview
+package com.example.themoviedb.views.recyclerview.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -18,7 +18,8 @@ data class MovieEntity(
 
 @Entity
 data class GenreEntity(
-   @PrimaryKey(autoGenerate = false) val genreId: Int,
+   @PrimaryKey(autoGenerate = true) val genreId: Int,
+   //@PrimaryKey(autoGenerate = false) val genreId: Int,
     val movieId: Int,
     val name: String,
 )

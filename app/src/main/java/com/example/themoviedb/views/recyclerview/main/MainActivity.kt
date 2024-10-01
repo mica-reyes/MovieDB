@@ -1,4 +1,4 @@
-package com.example.themoviedb.views
+package com.example.themoviedb.views.recyclerview.main
 
 import android.os.Bundle
 import android.view.View
@@ -28,19 +28,9 @@ class MainActivity : AppCompatActivity() {
         initMovieList()
         initUpcoming()
         initTopRated()
-        initmyList()
+        initMyList()
+        loading()
 
-        viewModel.loading.observe(this) { loading ->
-            binding.progressBar.visibility = if (loading) View.VISIBLE else View.INVISIBLE
-            binding.ivMdb.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.recyclerUpcoming.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.recyclerTopRated.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.tvMovies.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.tvTopRated.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.tvUpcoming.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.tvMyList.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-            binding.recyclerMyList.visibility = if (loading) View.INVISIBLE else View.VISIBLE
-        }
     }
 
     private fun initMovieList() {
@@ -72,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initmyList() {
+    private fun initMyList() {
         binding.recyclerMyList.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         viewModel.myList.observe(this) { movie ->
@@ -84,6 +74,20 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.tvMyList.text = "My lista"
             }
+        }
+    }
+
+    private fun loading(){
+        viewModel.loading.observe(this) { loading ->
+            binding.progressBar.visibility = if (loading) View.VISIBLE else View.INVISIBLE
+            binding.ivMdb.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.recyclerUpcoming.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.recyclerTopRated.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.tvMovies.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.tvTopRated.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.tvUpcoming.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.tvMyList.visibility = if (loading) View.INVISIBLE else View.VISIBLE
+            binding.recyclerMyList.visibility = if (loading) View.INVISIBLE else View.VISIBLE
         }
     }
 }

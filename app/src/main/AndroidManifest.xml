@@ -17,7 +17,7 @@
         android:theme="@style/Theme.TheMovieDB"
         tools:targetApi="31">
         <activity
-            android:name=".views.DetailActivity"
+            android:name=".views.recyclerview.detail.DetailActivity"
             android:exported="true">
             <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>-->
         </activity>
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.recyclerview.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.TheMovieDB.Starting">
 
